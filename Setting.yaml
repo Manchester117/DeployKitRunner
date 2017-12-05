@@ -1,0 +1,159 @@
+Configuration:
+  PullCodeTask:                                                                     # 拉去代码-TFS版本
+    TFPath: C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\TF.exe
+    SolutionPath: $/HighEnd/ZhaoPin.HighEnd.Solution
+    WorkSpace: D:\HighEndCode
+    UserName: highpin\zhaopeng
+    PassWord: zhaopin@123
+  CompileTask:                                                                      # 本地编译代码
+    MSBuildPath: C:\Program Files (x86)\MSBuild\14.0\Bin\MSBuild.exe
+    WorkSpace: D:\HighEndCode
+    SolutionName: ZhaoPin.HighEnd.Solution
+  DeployTask:                                                                       # 编译文件发布
+    WebSite:
+      - IP: 192.168.201.121
+        UserName: highpin\builduser
+        PassWord: zhuopin
+        Projects:
+          - Name: c.highpin.cn
+            Sources: D:\HighendCode\ZhaoPin.HighEnd.Solution\ZhaoPin.HighEnd.Web.JobSeeker
+            Destination: \\192.168.201.121\c$\test_c_copy
+            IgnoreFile:
+              Folder:                                                               # 过滤文件分为两种,文件和文件夹,均是列表形式
+                - obj
+              File:
+                - .pdb
+                - Web.config
+                - Web.Debug.config
+                - Web.Release.config
+          - Name: h.highpin.cn
+            Sources: D:\HighendCode\ZhaoPin.HighEnd.Solution\ZhaoPin.HighEnd.Web.HeadHunter
+            Destination: \\192.168.201.121\c$\test_h_copy
+            IgnoreFile:
+              Folder:
+                - obj
+              File:
+                - .pdb
+                - Web.config
+                - Web.Debug.config
+                - Web.Release.config
+          - Name: hr.highpin.cn
+            Sources: D:\HighendCode\ZhaoPin.HighEnd.Solution\ZhaoPin.HighEnd.Web.Companies
+            Destination: \\192.168.201.121\c$\test_hr_copy
+            IgnoreFile:
+              Folder:
+                - obj
+              File:
+                - .pdb
+                - Web.config
+                - Web.Debug.config
+                - Web.Release.config
+      - IP: 192.168.201.122
+        UserName: highpin\builduser
+        PassWord: zhuopin
+        Projects:
+          - Name: c.highpin.cn
+            Sources: D:\HighendCode\ZhaoPin.HighEnd.Solution\ZhaoPin.HighEnd.Web.JobSeeker
+            Destination: \\192.168.201.122\c$\test_c_copy
+            IgnoreFile:
+              Folder:
+                - obj
+              File:
+                - .pdb
+                - Web.config
+                - Web.Debug.config
+                - Web.Release.config
+          - Name: h.highpin.cn
+            Sources: D:\HighendCode\ZhaoPin.HighEnd.Solution\ZhaoPin.HighEnd.Web.HeadHunter
+            Destination: \\192.168.201.122\c$\test_h_copy
+            IgnoreFile:
+              Folder:
+                - obj
+              File:
+                - .pdb
+                - Web.config
+                - Web.Debug.config
+                - Web.Release.config
+          - Name: hr.highpin.cn
+            Sources: D:\HighendCode\ZhaoPin.HighEnd.Solution\ZhaoPin.HighEnd.Web.Companies
+            Destination: \\192.168.201.122\c$\test_hr_copy
+            IgnoreFile:
+              Folder:
+                - obj
+              File:
+                - .pdb
+                - Web.config
+                - Web.Debug.config
+                - Web.Release.config
+      - IP: 192.168.201.123
+        UserName: highpin\builduser
+        PassWord: zhuopin
+        Projects:
+          - Name: c.highpin.cn
+            Sources: D:\HighendCode\ZhaoPin.HighEnd.Solution\ZhaoPin.HighEnd.Web.JobSeeker
+            Destination: \\192.168.201.123\c$\test_c_copy
+            IgnoreFile:
+              Folder:
+                - obj
+              File:
+                - .pdb
+                - Web.config
+                - Web.Debug.config
+                - Web.Release.config
+          - Name: h.highpin.cn
+            Sources: D:\HighendCode\ZhaoPin.HighEnd.Solution\ZhaoPin.HighEnd.Web.HeadHunter
+            Destination: \\192.168.201.123\c$\test_h_copy
+            IgnoreFile:
+              Folder:
+                - obj
+              File:
+                - .pdb
+                - Web.config
+                - Web.Debug.config
+                - Web.Release.config
+          - Name: hr.highpin.cn
+            Sources: D:\HighendCode\ZhaoPin.HighEnd.Solution\ZhaoPin.HighEnd.Web.Companies
+            Destination: \\192.168.201.123\c$\test_hr_copy
+            IgnoreFile:
+              Folder:
+                - obj
+              File:
+                - .pdb
+                - Web.config
+                - Web.Debug.config
+                - Web.Release.config
+    Service:
+      - IP: 192.168.201.131
+        UserName: highpin\taskuser
+        PassWord: zhuopin@123
+        Projects:
+          - Name: HighEndWinService1
+            Sources: D:\HighendCode\ZhaoPin.HighEnd.Solution\ZhaoPin.HighEnd.TaskSystem.WinService\bin\Debug
+            Destination: \\192.168.201.131\c$\test_service
+            IgnoreFile:
+              Folder: ~
+              File:
+                - .pdb
+      - IP: 192.168.201.132
+        UserName: highpin\taskuser
+        PassWord: zhuopin@123
+        Projects:
+          - Name: HighEndWinService
+            Sources: D:\HighendCode\ZhaoPin.HighEnd.Solution\ZhaoPin.HighEnd.TaskSystem.WinService\bin\Debug
+            Destination: \\192.168.201.132\c$\test_service
+            IgnoreFile:
+              Folder: ~
+              File:
+                - .pdb
+      - IP: 192.168.201.133
+        UserName: highpin\taskuser
+        PassWord: zhuopin@123
+        Projects:
+          - Name: HighEndWinService
+            Sources: D:\HighendCode\ZhaoPin.HighEnd.Solution\ZhaoPin.HighEnd.TaskSystem.WinService\bin\Debug
+            Destination: \\192.168.201.133\c$\test_service
+            IgnoreFile:
+              Folder: ~
+              File:
+                - .pdb
+
