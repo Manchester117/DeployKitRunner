@@ -2,7 +2,7 @@ def create_line_format(sequence, index, space_num):                     # space_
     print("#", end='')
     for i in range(space_num):
         print(' ', end='')
-    if index is None:
+    if index is None:                                                   # 如果想自定义输出位置,index设置为None
         sequence = '{}'.format(sequence)
     else:
         sequence = '{} {}'.format(str(index + 1), sequence)
