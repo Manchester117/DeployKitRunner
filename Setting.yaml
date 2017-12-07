@@ -1,5 +1,5 @@
 Configuration:
-  PullCodeTask:                                                                     # 拉去代码-TFS版本
+  PullCodeTask:                                                                     # 拉取代码-TFS版本
     TFPath: C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\TF.exe
     SolutionPath: $/HighEnd/ZhaoPin.HighEnd.Solution
     WorkSpace: D:\HighEndCode
