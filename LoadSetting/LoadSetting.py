@@ -2,7 +2,7 @@ import yaml
 
 
 def get_config_element(config_element):
-    yml_file = open('Setting.yaml')
+    yml_file = open('Setting.yaml', encoding='UTF-8')
     yml_param = yaml.load(yml_file)
     if config_element == 'PullCodeTask':
         return yml_param['Configuration']['PullCodeTask']
